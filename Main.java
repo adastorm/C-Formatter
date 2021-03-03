@@ -12,7 +12,7 @@ class Main {
     System.out.println("Please Enter the name of your class");
     String filename =  s.nextLine()+ ".txt";
     File myObj = new File(filename);
-    myObj.deleteOnExit();
+
     try 
     {
       if (myObj.createNewFile()) {
@@ -97,8 +97,8 @@ class Main {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
-    System.out.println("Now go save your text in the file, because on exit the program will delete it");
-    s.nextLine();
+    System.out.println("If running locally, the reult will be stored in a .txt file\n Would you like it returend in the terminal [y/n]");
+    if(s.nextLine().toLowerCase().equals("y")) System.out.print(masterString);
 
     s.close();
   }

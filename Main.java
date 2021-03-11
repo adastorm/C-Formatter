@@ -5,7 +5,7 @@ import java.util.*;
 class Main {
  
   public static void main(String[] args) {
-    String masterString = "";
+    String masterString = "/*\n";
     Scanner s = new Scanner(System.in);
 
     //First get the class name for the file
@@ -43,7 +43,7 @@ class Main {
         String postString = s.nextLine(); 
         masterString += addFunction(nameString,preString,postString);
 
-        System.out.println("--Do you want to add another constructor?");
+        System.out.println("--Do you want to add another constructor? [y/n]");
         if(s.nextLine().toLowerCase().equals("y")!= true) loop = false;
       }
     }
@@ -63,7 +63,7 @@ class Main {
         String postString = s.nextLine(); 
         masterString += addFunction(nameString,preString,postString);
 
-        System.out.println("--Do you want to add another Accessor?");
+        System.out.println("--Do you want to add another Accessor? [y/n]");
         if(s.nextLine().toLowerCase().equals("y")!= true) loop = false;
       }     
     }
@@ -82,11 +82,11 @@ class Main {
         String postString = s.nextLine(); 
         masterString += addFunction(nameString,preString,postString);
 
-        System.out.println("--Do you want to add another Modifier?");
+        System.out.println("--Do you want to add another Modifier? [y/n]");
         if(s.nextLine().toLowerCase().equals("y")!=true) loop = false;
       }
     }
-
+    masterString+="*/";
     
     try {
       FileWriter mine = new FileWriter(filename);

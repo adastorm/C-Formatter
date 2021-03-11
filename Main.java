@@ -9,7 +9,7 @@ class Main {
     Scanner s = new Scanner(System.in);
 
     //First get the class name for the file
-    System.out.println("Please Enter the name of your class");
+    System.out.println("--Please Enter the name of your class");
     String filename =  s.nextLine()+ ".txt";
     File myObj = new File(filename);
 
@@ -28,61 +28,61 @@ class Main {
     }
 
     //Now start the input for  constructor
-    System.out.println("Do you have a Constructor / destructor [y/n]");
+    System.out.println("--Do you have a Constructor / destructor [y/n]");
     if(s.nextLine().toLowerCase().equals("y"))
     {
       masterString+= "Constructors:\n";
       boolean loop = true;
       while(loop)
       {
-        System.out.println("Please enter the constructor name and parameters");
+        System.out.println("--Please enter the constructor name and parameters");
         String nameString = s.nextLine();
-        System.out.println("Please enter the preconditions");
+        System.out.println("--Please enter the preconditions");
         String preString = s.nextLine();
-        System.out.println("Please enter the postconditions");
+        System.out.println("--Please enter the postconditions");
         String postString = s.nextLine(); 
         masterString += addFunction(nameString,preString,postString);
 
-        System.out.println("Do you want to add another constructor?");
+        System.out.println("--Do you want to add another constructor?");
         if(s.nextLine().toLowerCase().equals("y")!= true) loop = false;
       }
     }
 
-    System.out.println("Do you have a getter functions [y/n]");
+    System.out.println("Do you have a Accessor functions [y/n]");
     if(s.nextLine().toLowerCase().equals("y"))
     {
-      masterString+= "Getter Functions:\n";
+      masterString+= "Accessor Functions:\n";
       boolean loop = true;
       while(loop)
       {
-        System.out.println("Please enter the getter name and parameters");
+        System.out.println("--Please enter the Accessor name and parameters");
         String nameString = s.nextLine();
-        System.out.println("Please enter the preconditions");
+        System.out.println("--Please enter the preconditions");
         String preString = s.nextLine();
-        System.out.println("Please enter the postconditions");
+        System.out.println("--Please enter the postconditions");
         String postString = s.nextLine(); 
         masterString += addFunction(nameString,preString,postString);
 
-        System.out.println("Do you want to add another constructor?");
+        System.out.println("--Do you want to add another Accessor?");
         if(s.nextLine().toLowerCase().equals("y")!= true) loop = false;
       }     
     }
-    System.out.println("Do you have a setter functions [y/n]");
+    System.out.println("--Do you have a Modifier functions [y/n]");
     if(s.nextLine().toLowerCase().equals("y"))
     {
-      masterString+= "Setter Functions:\n";
+      masterString+= "Modifier Functions:\n";
       boolean loop = true;
       while(loop)
       {
-        System.out.println("Please enter the setter name and parameters");
+        System.out.println("--Please enter the Modifier name and parameters");
         String nameString = s.nextLine();
-        System.out.println("Please enter the preconditions");
+        System.out.println("--Please enter the preconditions");
         String preString = s.nextLine();
-        System.out.println("Please enter the postconditions");
+        System.out.println("--Please enter the postconditions");
         String postString = s.nextLine(); 
         masterString += addFunction(nameString,preString,postString);
 
-        System.out.println("Do you want to add another constructor?");
+        System.out.println("--Do you want to add another Modifier?");
         if(s.nextLine().toLowerCase().equals("y")!=true) loop = false;
       }
     }
@@ -97,7 +97,7 @@ class Main {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
-    System.out.println("If running locally, the reult will be stored in a .txt file\n Would you like it returend in the terminal [y/n]");
+    System.out.println("--If running locally, the reult will be stored in a .txt file\n --Would you like it returend in the terminal [y/n]");
     if(s.nextLine().toLowerCase().equals("y")) System.out.print(masterString);
 
     s.close();
@@ -106,7 +106,7 @@ class Main {
 
 private static String addFunction(String name, String preCon, String postCon)
  {
-   return "  " +name +"\n  PRECONDITION:" + preCon + "\n  POSTCONDITION:"+postCon + "\n";
+   return "  " +name +"\n  PRECONDITION:" + preCon + "\n  POSTCONDITION:"+postCon + "\n\n";
  }
 
 }
